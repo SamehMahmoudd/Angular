@@ -1,0 +1,56 @@
+<app-header></app-header>
+
+
+
+<div class="container">
+
+<div class="card mb-5 mt-5 col-6" style="width: 18rem;" >
+
+  <img src={{product?.Image}} class="card-img-top" PrdStyle="10px" >
+
+
+
+  <div class="card-body" [ngStyle]="{'background-color':(product?.Quantity==1 ? 'lightgray':'lightyellow')}">
+
+    <h5 class="card-title">{{product?.Name}}</h5>
+
+    <p class="card-text">Category ID:{{product?.CategoryID}}</p>
+    <span>{{product?.Price|currency}}</span><br>
+
+
+    <ng-container [ngSwitch]="product?.Quantity">
+     <ng-container *ngSwitchCase="0"><h5>Out of Stock</h5></ng-container>
+     <ng-container *ngSwitchCase="1"><h5>Last item</h5></ng-container>
+     <ng-container *ngSwitchCase="2"><h5>Last Two items</h5></ng-container>
+     <ng-container *ngSwitchDefault> <h5>In Stock</h5> </ng-container>
+
+
+    </ng-container>
+
+
+  </div>
+</div>
+
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination d-flex justify-content-around">
+    <li class="page-item" (click)="prev()" style="cursor: pointer;">
+      <a class="page-link" aria-label="Previous">
+        <span aria-hidden="true">&laquo; &nbsp; Previous</span>
+
+      </a>
+    </li>
+
+    <li class="page-item" (click)="nxt()" style="cursor: pointer;">
+      <a class="page-link"  aria-label="Next">
+        <span aria-hidden="true">Next &nbsp; &raquo; </span>
+       
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+</div>
+
+<app-footer></app-footer>

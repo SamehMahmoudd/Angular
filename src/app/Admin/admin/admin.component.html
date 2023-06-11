@@ -1,0 +1,84 @@
+<div class="d-flex justify-content-between">
+  <button type="submit" class="btn btn-primary m-3" (click)="editComp(product.id)">ADD PRODUCT</button>
+<button  class="btn btn-danger m-3"  (click)="backHome()">Back Home</button>
+</div>
+
+
+<div class="container">
+
+
+<div class="d-flex flex-wrap justify-content-around " >
+
+<ng-container *ngFor="let product of products "  >
+
+<div class="card mb-5 mt-5 col-6" style="width: 18rem;" >
+
+  <img src={{product.Image}} class="card-img-top" PrdStyle="10px" >
+
+
+
+  <div class="card-body" [ngStyle]="{'background-color':(product.Quantity==1 ? 'lightgray':'lightyellow')}">
+
+    <h5 class="card-title">{{product.Name}}</h5>
+
+    <p class="card-text">Category ID:{{product.CategoryID}}</p>
+    <span>{{product.Price|currency}}</span><br>
+
+
+    <ng-container [ngSwitch]="product.Quantity">
+     <ng-container *ngSwitchCase="0"><h5>Out of Stock</h5></ng-container>
+     <ng-container *ngSwitchCase="1"><h5>Last item</h5></ng-container>
+     <ng-container *ngSwitchCase="2"><h5>Last Two items</h5></ng-container>
+     <ng-container *ngSwitchDefault> <h5>In Stock</h5> </ng-container>
+
+
+    </ng-container><br>
+
+  <div class="d-flex justify-content-between">
+  <button type="submit" class="btn btn-primary" (click)="editComp(product.id)">Edit</button>
+  <button type="submit" class="btn btn-danger" (click)="deleteProduct(product.id)" >Delete</button>
+
+  </div>
+
+  </div>
+</div>
+</ng-container>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value)">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" class="form-control" [(ngModel)]="product.Name" required>
+  </div>
+  <div class="form-group">
+    <label for="description">Quantity:</label>
+    <textarea id="description" name="description" class="form-control" [(ngModel)]="product.Quantity" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" class="form-control" [(ngModel)]="product.Price" required>
+  </div>
+  <button type="submit" class="btn btn-primary">ADD</button>
+  <button type="submit" class="btn btn-primary">Edit</button>
+  <button type="submit" class="btn btn-danger">Delete</button>
+</form> -->

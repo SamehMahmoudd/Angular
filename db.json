@@ -1,0 +1,70 @@
+{
+  "products": [
+    {
+      "Name": "Macbook",
+      "Quantity": 12,
+      "Price": 12000,
+      "CategoryID": 2,
+      "Image": "https://www.asus.com/media/Odin/Websites/global/ProductLine/20200824120814.jpg",
+      "id": 6
+    },
+    {
+      "Name": "Asus",
+      "Quantity": 2,
+      "Price": 120000,
+      "CategoryID": 1,
+      "Image": "https://www.asus.com/media/Odin/Websites/global/ProductLine/20200824120814.jpg",
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Sameh",
+      "lastName": "Moostafa",
+      "email": "samehhmahmousd@gmail.com"
+    },
+    {
+      "firstName": "khaled",
+      "lastName": "fathy",
+      "email": "samehhmahmousd@gmail.com",
+      "id": 2
+    },
+    {
+      "firstName": "Mahmoud",
+      "lastName": "fathy",
+      "email": "samehhmahmousd@gmail.com",
+      "id": 3
+    },
+    {
+      "firstName": "Sameh",
+      "lastName": "fathy",
+      "email": "samehhmahmousd@gmail.com",
+      "mobile": [
+        {
+          "anotherMobile": "111111111111111"
+        }
+      ],
+      "city": "",
+      "postalCode": "",
+      "street": "",
+      "password": "",
+      "id": 4
+    },
+    {
+      "firstName": "Fathy",
+      "lastName": "abdullah",
+      "email": "samehmahmoud1221@hotmail.com",
+      "mobile": [
+        {
+          "number": "01234567899"
+        }
+      ],
+      "city": "alexandria",
+      "postalCode": "12312",
+      "street": "aaaaa",
+      "password": "12345678",
+      "id": 5
+    }
+  ]
+}

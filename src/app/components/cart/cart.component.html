@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+
+
+<div class="container">
+
+<h1 style="color: rgb(255, 81, 0) ;text-align: center;">YOUR SHOPPING CART</h1>
+
+<table class="table table-dark" >
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor=" let prod of products">
+      <th scope="row">1</th>
+      <td>{{prod.Name}}</td>
+      <td>{{prod.Price}}</td>
+      <td>{{prod.Quantity}}</td>
+      <td>{{prod.Quantity*prod.Price}}</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+<app-footer></app-footer>

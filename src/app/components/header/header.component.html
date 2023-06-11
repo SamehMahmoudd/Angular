@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="color:rgb(255, 81, 0)" routerLink="/Home">Shoppe</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="/Home" routerLinkActive="active-link" >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/AboutUs" routerLinkActive="active-link" >About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ContactUs" routerLinkActive="active-link">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin" routerLinkActive="active-link">admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user/viewProfile" routerLinkActive="active-link">View Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user/editProfile" routerLinkActive="active-link">Edit Profile</a>
+        </li>
+
+
+      </ul>
+      <form class="d-flex" role="search">
+        <a routerLink="/login"> <button class="btn btn-outline-success" >Login</button></a>
+       <a routerLink="/Cart"> <button class="btn btn-outline-success" >Cart</button></a>
+      </form>
+    </div>
+  </div>
+</nav>

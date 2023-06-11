@@ -1,0 +1,127 @@
+
+<h1 style="color:rgb(255, 81, 0);text-align: center;">Sign Up</h1>
+<hr>
+<div class="container d-flex justify-content-center">
+
+
+  <form class=" m-5 w-50 "  [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)" >
+
+    <div class="row mb-4">
+
+      <div class="col">
+        <div class="form-outline">
+
+          <input type="text" id="firstName" class="form-control"
+            name='firstName'
+             formControlName="firstName"
+             [ngClass]="{'is-invalid':(firstName?.touched||firstName?.dirty) && firstName?.invalid}"
+             placeholder="First Name (required)" />
+
+
+          <span class="invalid-feedback">
+            <span *ngIf="firstName?.errors?.['required']">Please enter your first name</span>
+            <span *ngIf="firstName?.errors?.['minlength']">First Name is must be longer than 5 characters</span>
+          </span>
+
+
+        </div>
+      </div>
+
+
+
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="lastName" class="form-control"
+          name='lastName'
+          formControlName="lastName"
+          [ngClass]="{'is-invalid':(lastName?.touched||lastName?.dirty) && lastName?.invalid}"
+          placeholder="Last Name (required)" />
+
+
+          <span class="invalid-feedback">
+            <span *ngIf="lastName?.errors?.['required']">Please enter your first name</span>
+            <span *ngIf="lastName?.errors?.['minlength']">Last Name is must be longer than 5 characters</span>
+          </span>
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="email" id="email" class="form-control"
+      name='email'
+      formControlName="email"
+      placeholder="Email(required)" required/>
+
+
+
+    </div>
+  <div >
+    Mobile:
+    <div formArrayName="mobile">
+      <div *ngFor="let num of mobile.controls;let i=index">
+        <div [formGroupName]="i" class="d-flex align-items-center" >
+
+         <div>
+          Number :
+          <input type="text" formControlName="number" class="form-control">
+        </div>
+          <div>
+          <button class="btn btn-danger " (click)="removeMobile(i)">X</button>
+        </div>
+        </div>
+      </div>
+    </div><br>
+    <button type="button" class="btn btn-danger" (click)="addMobile()">Add Mobile</button>
+  </div><br>
+
+  <div class="form-outline mb-4">
+    <input type="text" id="city" class="form-control"
+    name='city'
+    formControlName="city"
+    placeholder="City (required)" required/>
+
+
+
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type="text" id="postalCode" class="form-control"
+    name='postalCode'
+    formControlName="postalCode"
+    placeholder="Postal Code(required)" required/>
+
+
+
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type="text" id="street" class="form-control"
+    name='street'
+    formControlName="street"
+    placeholder="Street(required)" required/>
+
+
+
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type="password" id="password" class="form-control"
+    name='password'
+    formControlName="password"
+    placeholder="Password(required)" required/>
+
+
+
+  </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4" >Sign up</button>
+
+
+  </form>
+  </div>
+
+

@@ -1,0 +1,50 @@
+<!-- <div *ngIf=" ! IsPurchased"><h2>Thanks for Purchasing.</h2></div> -->
+
+<label for="my-dropdown">Select a Category:</label><br>
+<select [(ngModel)]="categoryItems"  (change)="filterItems()">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+</select>
+
+<div class="container">
+
+
+<div class="d-flex flex-wrap justify-content-around " >
+
+<ng-container *ngFor="let product of filteredProducts "  >
+
+<div class="card mb-5 mt-5 col-6" style="width: 18rem;" >
+
+  <img src={{product.Image}} class="card-img-top" PrdStyle="10px" (click)="prdDetails(product.id)">
+
+
+
+  <div class="card-body" [ngStyle]="{'background-color':(product.Quantity==1 ? 'lightgray':'lightyellow')}">
+
+    <h5 class="card-title">{{product.Name}}</h5>
+
+    <p class="card-text">Category ID:{{product.CategoryID}}</p>
+    <span>{{product.Price|currency}}</span><br>
+    <span>{{creditCard|creditCardStyle}}</span>
+
+    <ng-container [ngSwitch]="product.Quantity">
+     <ng-container *ngSwitchCase="0"><h5>Out of Stock</h5></ng-container>
+     <ng-container *ngSwitchCase="1"><h5>Last item</h5></ng-container>
+     <ng-container *ngSwitchCase="2"><h5>Last Two items</h5></ng-container>
+     <ng-container *ngSwitchDefault> <h5>In Stock</h5> </ng-container>
+
+
+    </ng-container><br>
+
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-primary" (click)="selectProduct(product)"  [disabled]="product.Quantity==0">Add to Cart</button>
+    <button class="btn btn-primary" (click)="prdDetails(product.id)" >View Details</button>
+  </div>
+
+  </div>
+</div>
+</ng-container>
+</div>
+
+</div>
